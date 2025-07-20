@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(9, 40px);
+  gap: 1px;
+  margin: auto;
+  width: fit-content;
+}
+
+input {
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #999;
+}
+
+input:focus {
+  outline: 2px solid #2196f3;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[data-block="border"] {
+  border: 2px solid black;
+}
+
+#alert-box {
+  color: white;
+  background-color: #e63946;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 15px auto;
+  width: fit-content;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#alert-box.show {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+#solve-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+#solve-btn:hover {
+  background-color: #1d3557;
+}
