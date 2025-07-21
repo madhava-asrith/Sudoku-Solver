@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Sudoku Solver</title>
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Custom Puzzle Solver</h1>
+    <a href="main.html" class="custom-btn">← Solve Existing Puzzles</a> <!-- back button -->
+  </header>
+
+  <main>
+    <section class="config">
+      <label for="custom-grid-size">Grid Block Size (n):</label>
+      <select id="custom-grid-size">
+        <option value="3" selected>3 x 3</option>
+        <option value="4">4 x 4</option>
+        <option value="5">5 x 5</option>
+      </select>
+      
+      <button id="generate-grid">Generate Grid</button>
+    </section>
+
+    <section class="game custom-game" style="display: none;">
+      <div class="sudoku-grid" id="custom-grid">
+        <!-- Grid inputs generated here -->
+      </div>
+
+      <div class="controls">
+        <button id="toggle-input-btn">Start Input</button>
+        <button id="solve-custom-btn" disabled>Solve Puzzle</button>
+        <button id="reset-custom-btn">Reset Puzzle</button>
+      </div>
+    </section>
+
+    <script type="module" src="scripts/custom.js"></script>
+  </main>
+
+</body>
+</html>

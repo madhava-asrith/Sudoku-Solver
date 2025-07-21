@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Play and solve custom Sudoku puzzles with live hinting, undo, difficulty levels, and timer!" />
+
+  <title>Sudoku Puzzles</title>
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body>
+  <header role="banner">
+    <h1>Sudoku Puzzles</h1>
+    <a href="custom.html" class="custom-btn">Computer Solution</a>
+    <button id="toggle-theme">🌙 Dark Mode</button>
+  </header>
+
+  <main role="main">
+    <section class="config">
+      <label for="grid-size">Select Grid Block Size:</label>
+      <select id="grid-size">
+        <option value="3">3 x 3</option>
+        <option value="4">4 x 4</option>
+        <option value="5">5 x 5</option>
+      </select>
+
+      <div class="difficulty">
+        <button class="diff-btn" data-diff="easy">Easy</button>
+        <button class="diff-btn" data-diff="medium">Medium</button>
+        <button class="diff-btn" data-diff="hard">Hard</button>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="start-btn">Start Game</button>
+      <button id="reset-btn" style="display: none;">Reset Game</button>
+    </section>   
+
+    <section class="game" style="display: none;">
+      <div class="sudoku-grid" id="sudoku-grid">
+        <!-- Grid cells will be dynamically filled via JS -->
+      </div>
+      
+      <div class="sidebar">
+        <div class="status-box">
+          <p><strong>Mistakes:</strong> <span id="mistake-count">0</span> / <span id="mistake-limit">3</span></p>
+        </div>
+        <div class="status-box">
+          <p><strong>Timer:</strong> <span id="timer">00:00</span></p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="undo-btn">Undo</button>
+        <button id="hint-btn">Hint</button>
+      </div>
+
+    </section>
+  </main>
+
+  <script type="module" src="scripts/main.js"></script>
+  <!-- <script src="scripts/ui.js"></script>
+  <script src="scripts/solver.js"></script>
+  <script src="scripts/generator.js"></script>
+  <script src="scripts/validation.js"></script>-->
+
+</body>
+</html>
