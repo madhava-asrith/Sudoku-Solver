@@ -15,7 +15,7 @@ let secondsElapsed = 0; // For timer
 // let allowedMistakes = 3; // For setting allowed mistakes
 // let moveStack = []; // For undo
 
-export function setupUIEvents(onCellInput, onHintRequest, onStartGame) {
+export function setupUIEvents(onCellInput, onHintRequest, onStartGame, undoMove) {
   gridSizeSelect.addEventListener("change", (e) => {
     selectedSize = parseInt(e.target.value);
     resetGame();
@@ -139,29 +139,6 @@ export function setupUIEvents(onCellInput, onHintRequest, onStartGame) {
     gridContainer.innerHTML = "";
     renderGrid(selectedSize, onCellInput);
     onStartGame();
-  }
-
-  function undoMove() {
-    const lastMove = moveStack.pop();
-    if (lastMove) {
-      const idx = lastMove.row * selectedSize * selectedSize + lastMove.col;
-      const cell = gridContainer.children[idx];
-      cell.value = lastMove.prev || "";
-      board[lastMove.row][lastMove.col] = lastMove.prev !== "" ? parseInt(lastMove.prev) : 0;
-
-      // Update classes
-      if (lastMove.prev === "") {
-        cell.classList.remove("cell-correct", "cell-incorrect");
-      } else if (parseInt(lastMove.prev) === solvedBoard[lastMove.row][lastMove.col]) {
-        cell.classList.add("cell-correct");
-        cell.classList.remove("cell-incorrect");
-      } else {
-        cell.classList.add("cell-incorrect");
-        cell.classList.remove("cell-correct");
-      }
-
-      cell.dataset.prev = lastMove.prev || "";
-    }
   }
   
 }
