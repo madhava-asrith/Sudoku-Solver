@@ -26,7 +26,7 @@ An interactive, web-based Sudoku solver that supports both auto-generated puzzle
 
 ## 📁 Folder Structure
 sudoku-solver/
-├── index.html
+├── main.html
 ├── custom.html
 ├── style/
 │ └── style.css
